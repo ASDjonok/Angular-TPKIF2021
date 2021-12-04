@@ -11,7 +11,7 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   title = 2;
-  text = "Hello world!";
+  text = "Hello world!!!!";
   condition = false;
   items = ["i1", "i2", "i3"];
   // name = "Tom";
