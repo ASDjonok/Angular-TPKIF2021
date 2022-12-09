@@ -1,6 +1,5 @@
 <!--<h1>{{text}}</h1>-->
 
-
 <!--<h1 *ngIf="condition">Hello world!</h1>-->
 <h1 *ngIf="condition;else bye">Hello world!</h1>
 <!--<h1 *ngIf="!condition">Bye world!</h1>-->
@@ -14,7 +13,9 @@
   </li>
 </ul>
 
-<app-second-child-component></app-second-child-component>
+<!--<app-second-child-component></app-second-child-component>-->
+<!--<app-second-child-component><h2>test-{{name}}</h2></app-second-child-component>-->
+<app-second-child-component [userName]="name" [userAge]="age"><h2>test-{{name}}</h2></app-second-child-component>
 <app-my-component-in-my-model></app-my-component-in-my-model>
 
 <!--<input type="text" value="123">-->
@@ -28,82 +29,8 @@
 <p>Кількість кліків {{count}}</p>
 <button (click)="increase2($event)">Click</button>
 
-<!--todo add double-side synchronization (view-model)-->
 <p>Привіт {{name}}</p>
-<!--<form>-->
-  <input type="text" [(ngModel)]="name"/> <br><br>
-  <input type="text" [(ngModel)]="name"/>
-<!--</form>-->
-<!--<input type="text" [value]="name" /> <br><br>
-<input type="text" [value]="name" />-->
-
-<!--<div class="container">
-  <div [hidden]="submitted">
-    <h1>Hero Form</h1>
-    <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" class="form-control" id="name"
-               required
-               [(ngModel)]="model.name" name="name"
-               #name="ngModel">
-        <div [hidden]="name.valid || name.pristine"
-             class="alert alert-danger">
-          Name is required
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="alterEgo">Alter Ego</label>
-        <input type="text" class="form-control" id="alterEgo"
-               [(ngModel)]="model.alterEgo" name="alterEgo">
-      </div>
-
-      <div class="form-group">
-        <label for="power">Hero Power</label>
-        <select class="form-control" id="power"
-                required
-                [(ngModel)]="model.power" name="power"
-                #power="ngModel">
-          <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
-        </select>
-        <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
-          Power is required
-        </div>
-      </div>
-
-      <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
-      <button type="button" class="btn btn-default" (click)="newHero(); heroForm.reset()">New Hero</button>
-      <i>with</i> reset
-
-      &nbsp;&nbsp;
-      <button type="button" class="btn btn-default" (click)="newHero()">New Hero</button>
-      <i>without</i> reset
-
-      &lt;!&ndash; NOT SHOWN IN DOCS &ndash;&gt;
-      <div>
-        <hr>
-        Name via form.controls = {{showFormControls(heroForm)}}
-      </div>
-      &lt;!&ndash; - &ndash;&gt;
-    </form>
-  </div>
-
-  <div [hidden]="!submitted">
-    <h2>You submitted the following:</h2>
-    <div class="row">
-      <div class="col-xs-3">Name</div>
-      <div class="col-xs-9">{{ model.name }}</div>
-    </div>
-    <div class="row">
-      <div class="col-xs-3">Alter Ego</div>
-      <div class="col-xs-9">{{ model.alterEgo }}</div>
-    </div>
-    <div class="row">
-      <div class="col-xs-3">Power</div>
-      <div class="col-xs-9">{{ model.power }}</div>
-    </div>
-    <br>
-    <button class="btn btn-primary" (click)="submitted=false">Edit</button>
-  </div>
-</div>-->
+<input type="text" [(ngModel)]="name"/> <br><br>
+<input type="text" [(ngModel)]="name"/>
+<br><br>
+<input type="number" [(ngModel)]="age" />

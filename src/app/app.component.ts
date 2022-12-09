@@ -18,6 +18,7 @@ export class AppComponent {
   colspan = 2;
   count: number = 0;
   name: string = "Tom";
+  age:number = 24;
   // initialInputValue: number = 124;
   initialInputValue: string = "125";
 
